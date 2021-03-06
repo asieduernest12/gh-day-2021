@@ -1,0 +1,117 @@
+<div rect-m>
+  <div flg>
+    <div pole></div>
+    <div fly>
+      <div b_red></div>
+      <div b_yellow></div>
+      <div b_green></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+  --c_red: #CE1126;
+  --c_yellow: #FCD116;
+  --c_green: #006B3F;
+  --c_black: #000;
+  --c_bg: #f7f7ff;
+  --c_grey: #808080;
+    --flg1: url(https://as2.ftcdn.net/jpg/03/15/48/39/500_F_315483936_MwbZsWeIgARJTvCbSXRx0GdjmLckRx9e.jpg);
+    --flg2: url(https://as1.ftcdn.net/jpg/00/73/70/04/500_F_73700472_beOPkkxwBTKsozLpAPuQkil1SCeuyDPQ.jpg);
+    --flg3: url(https://as1.ftcdn.net/jpg/04/11/59/28/500_F_411592867_NGI5mQvlCmM7spfWWaHeVpUZkP5yDO3Q.jpg);
+    --flg4: url(https://as2.ftcdn.net/jpg/00/75/56/53/500_F_75565359_jbwmQSrrPRKa1x7u3bnptOAIoNmwKtGt.jpg);
+    --flg5: url(https://as2.ftcdn.net/jpg/01/54/24/25/500_F_154242525_X3o8L0kLcl7XrB2GKajd1EWY7R3vcuJz.jpg);
+    --flg6: url(https://as2.ftcdn.net/jpg/02/20/39/91/500_F_220399172_cVoXMMFifwbXbC3Z3lnYmORhZULwH5hk.jpg);
+  }
+  
+  body {
+    background: var(--bg_grey);
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    background-size: contain;
+    animation: flg-anime 40s ease-in  alternate infinite;
+    
+  }
+  
+  @keyframes flg-anime {
+    0% {
+      background-image: var(--flg1);
+    }
+    
+    20% {
+      background-image: var(--flg2);
+    }
+    
+    40% {
+      background-image: var(--flg3);
+    }
+    
+    60%{
+      background-image: var(--flg4);
+    }
+    
+    80%{
+      background-image: var(--flg5);
+    }
+    
+    100% {
+      background-image: var(--flg6);
+    }
+    
+    
+  }
+  
+  [flg] {
+    height: 400px;
+    width: 250px;
+    display: grid;
+    grid-template-columns: 20px auto;
+    grid-template-rows: 40% auto;
+  }
+  
+  [pole]{
+    background: var(--c_grey);
+    grid-area: 1/1/3/2;
+  }
+  
+  [fly]{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    
+  }
+  
+  [b_red] {
+    background: var(--c_red);
+    height: 33%;
+    
+    
+  }
+  
+  [b_yellow]{
+    background: var(--c_yellow);
+    height: 33%;
+  }
+  
+  [b_yellow]::after {
+    content: '';
+    height: 50px;
+    width: 50px;
+    background: black;
+    position: fixed;
+    -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0 38%, 37% 38%);
+    margin-left: 90px;
+  }
+  
+  [b_green]{
+    background: var(--c_green);
+    height: 33%;
+  }
+  
+  
+</style>
